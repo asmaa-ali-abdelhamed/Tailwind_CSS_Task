@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        *::selection{
+            background-color: #9B7B55;
+            color: #fff !important;
+        }
+    </style>
+</head>
+<body class="bg-[#212121]">
+    <!-- start header -->
+    <header class="container m-auto">
+        <!-- top header -->
+        <div class="md:flex justify-around text-[#A1A1A1] pt-2 hidden ">
+            <ul class="flex">
+                <li class="px-5"><a href="#"><i class="fas fa-envelope text-xs pe-2"></i>info@jaber.com</a></li>
+                <li class="px-5"><a href="#"><i class="fas fa-phone text-xs pe-2"></i>(02) 966 202 290</a></li>
+            </ul>
+            <ul class="flex">
+                <li class="px-2"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li class="px-2"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li class="px-2"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                <li class="px-2"><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                <li class="px-2"><a href="#"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+        </div>
+        <!-- start navbar -->
+        <nav class="py-4 flex justify-around items-center border-t-[1px] border-zinc-700">
+            <div>
+                <!-- logo -->
+                <a href="#">
+                    <svg width="100px" heught="100px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 29"><path fill="#9B7B55" d="M6.09545 21.4873H1.41667V20.3491H6.09545C6.65401 20.3491 7.12296 20.1383 7.50236 19.7168C7.88176 19.2952 8.07146 18.7367 8.07146 18.0411V1H9.20964V18.0411C9.20964 19.0423 8.9093 19.8696 8.30859 20.523C7.70788 21.1659 6.97016 21.4873 6.09545 21.4873ZM6.09545 23.7636H1.41667V22.6254H6.09545C7.27578 22.6254 8.27696 22.1776 9.09897 21.2818C9.93154 20.386 10.3478 19.3058 10.3478 18.0411V1H11.486V18.0411C11.486 19.6219 10.9591 20.9709 9.9052 22.088C8.86187 23.2051 7.59194 23.7636 6.09545 23.7636ZM6.09545 26.0401H1.41667V24.9019H6.09545C7.9081 24.9019 9.44676 24.2326 10.7114 22.8942C11.9866 21.5558 12.6242 19.9381 12.6242 18.0411V1H13.7624V18.0411C13.7624 19.4849 13.4199 20.8234 12.7348 22.0564C12.0604 23.2788 11.133 24.2485 9.95262 24.9652C8.77229 25.6818 7.48655 26.0401 6.09545 26.0401ZM6.09545 28.3164H1.41667V27.1782H6.09545C7.29687 27.1782 8.44032 26.9359 9.5258 26.4511C10.6113 25.9664 11.544 25.3182 12.3238 24.5067C13.1142 23.6846 13.7413 22.7098 14.205 21.5821C14.6687 20.4545 14.9006 19.2742 14.9006 18.0411V1H16.0388V18.0411C16.0388 19.4322 15.7753 20.7601 15.2483 22.0248C14.7319 23.2895 14.0258 24.3855 13.1301 25.313C12.2448 26.2297 11.1857 26.9569 9.95262 27.4943C8.73012 28.0423 7.44439 28.3164 6.09545 28.3164Z"></path><path fill="#fff" d="M37.5768 27.4167L37.5408 14.8527C37.5048 10.6407 34.7328 8.12066 29.8008 8.12066C26.1648 8.12066 24.2208 8.94866 21.5568 10.5327L23.2488 13.4127C25.1568 12.1167 27.0648 11.4687 28.9008 11.4687C31.9248 11.4687 33.4728 12.9087 33.4728 15.3207V15.8967H27.6768C23.0688 15.9327 20.4408 18.1647 20.4408 21.6567C20.4408 25.0407 23.0328 27.5967 27.1728 27.5967C29.9448 27.5967 32.1408 26.7687 33.5088 25.0767V27.4167H37.5768ZM28.0368 24.3207C25.7328 24.3207 24.3288 23.2047 24.3288 21.4767C24.3288 19.6407 25.5888 18.9207 28.2888 18.9207H33.4728V20.6847C33.2568 22.7727 30.9888 24.3207 28.0368 24.3207ZM54.1346 8.12066C51.1466 8.12066 48.8426 9.34466 47.4386 11.5767V0.704663H43.2986V27.4167H47.4386V24.1047C48.8426 26.3367 51.1466 27.5607 54.2066 27.5607C59.6786 27.5607 63.2786 23.6367 63.2786 17.9127C63.2786 12.0807 59.5706 8.12066 54.1346 8.12066ZM53.2706 24.0327C49.8506 24.0327 47.4386 21.4767 47.4386 17.7687C47.4386 14.1687 49.8506 11.5767 53.2706 11.5767C56.6906 11.5767 59.1026 14.2047 59.1026 17.7687C59.1026 21.4407 56.6906 24.0327 53.2706 24.0327ZM75.4713 8.12066C69.7833 8.15666 65.7873 12.0807 65.7873 17.8767C65.7873 23.6367 69.6753 27.5607 75.5793 27.5607C78.8913 27.5607 81.6273 26.3727 83.4993 24.3207L81.3033 21.9807C79.8993 23.4207 77.9913 24.2127 75.9033 24.2127C72.8793 24.2127 70.6113 22.3767 69.9633 19.4247H84.4353C84.9393 12.5127 82.2033 8.12066 75.4713 8.12066ZM69.8913 16.4007C70.3233 13.3407 72.4833 11.4327 75.5073 11.4327C78.6393 11.4327 80.6913 13.3047 80.8353 16.4007H69.8913ZM92.8914 12.0807V8.26466H88.7514V27.4167H92.8914V17.4087C93.2154 14.1327 95.6634 11.8647 99.5154 12.0807V8.12066C96.4914 8.12066 94.1874 9.48866 92.8914 12.0807Z"></path></svg>
+                </a>
+                
+            </div>
+
+            <!-- navbar -->
+            <span class="text-3xl text-white cursor-pointer mx-2 md:hidden block">
+                <i class="fas fa-bars" name="menu" onclick="Menu(this)"></i>
+            </span>
+            <ul id="list" class="md:flex justify-evenly text-[#fff] font-bold md:items-center  z-50 bg-[#212121] md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7  top-[-400px] transition-all ease-in duration-500">
+                <li><a href="#" class="ps-10">Home</a></li>
+                <li><a href="#" class="ps-10">Places</a></li>
+                <li><a href="#" class="ps-10">Properties</a></li>
+                <li><a href="#" class="ps-10">Pages</a></li>
+                <li><a href="#" class="ps-10">About</a></li>
+                <li><a href="#" class="ps-10">Contact</a></li>
+            </ul>
+
+            <!-- icon -->
+            <ul class="md:flex justify-evenly text-[#fff] font-bold hidden">
+                <li class="bg-[#9B7B55] rounded-full h-10 w-10 me-1 items-center flex justify-center"><a href="#"><i class="fab fa-solid fa-magnifying-glass"></i></a></li>
+                <li class="bg-[#9B7B55] rounded-full h-10 w-10 items-center flex justify-center"><a href="#"><i class="fas fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- section map -->
+    <section class="relative">
+        <iframe class="w-100 h-100" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d110502.61185042532!2d31.340866522711554!3d30.059611343358824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sar!2seg!4v1687748241857!5m2!1sar!2seg" style="border:0; width: 100%; height: 85vh;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="w-3/4 mx-auto font-semibold absolute bottom-4 md:block hidden">
+            <ul class="flex justify-start text-white">
+                <li class="py-2 px-3 bg-[#9B7B55] me-1 cursor-pointer">All</li>
+                <li class="py-2 px-3 bg-[#212121] hover:bg-[#9B7B55] me-1 cursor-pointer">Seles</li>
+                <li class="py-2 px-3 bg-[#212121] hover:bg-[#9B7B55] me-1 cursor-pointer">Rentals</li>
+                <li class="py-2 px-3 bg-[#212121] hover:bg-[#9B7B55] me-2 cursor-pointer">13</li>
+            </ul>
+            <form class="grid grid-cols-3 gap-5 mt-1 p-8 bg-[#2E2E2E]">
+                <div>
+                    <label class="block text-white pb-2">Type</label>
+                    <select class="bg-[#212121] text-[#989899] py-2 px-5 rounded-lg" name="select">
+                        <option value="">Select a Type</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-white pb-2">Type</label>
+                    <select class="bg-[#212121] text-[#989899] py-2 px-5 rounded-lg" name="select">
+                        <option value="">Select a Type</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-white pb-2">Type</label>
+                    <select class="bg-[#212121] text-[#989899] py-2 px-5 rounded-lg" name="select">
+                        <option value="">Select a Type</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- section STEPS HOW IT WORKS -->
+
+    <section class="container m-auto pt-36">
+        <div class="text-center">
+            <h2 class="bg-[#9B7B55] text-white inline-block px-10">
+                <span class="md:text-5xl text-3xl font-bold">STEPS</span>
+                <br>
+                <span class="md:text-3xl text-xl">HOW IT WORKS</span>
+            </h2>
+        </div>
+        <div class="sm:grid lg:grid-cols-4 lg:gap-32 sm:grid-cols-2 sm:gap-10 block pt-16 text-[#A1A1A1]" >
+            <div class="mt-20 lg:mt-1 relative">
+                <div class="absolute top-8 right-3 bg-[#2E2E2E] p-2 rounded-full">
+                    <h2 class="bg-[#48567F] text-white rounded-full px-3 py-2 font-bold">01</h2>
+                </div>
+                <div class="rounded-full bg-[#2E2E2E] p-7 shadow-2xl">
+                    <img class="rounded-full bg-[#2E2E2E]" src="https://jaber.webrouk.com/assets/images/steps/steps-1.jpg" alt="">
+                </div>
+                <div class="text-center leading-7 pt-5">
+                    <h2 class="font-bold text-xl text-white">Choose a Category</h2>
+                    <p>Category to browse the</p>
+                    <p>properties under it</p>
+                </div>
+            </div>
+            <div class="mt-20 relative">
+                <div class="absolute top-8 right-3 bg-[#2E2E2E] p-2 rounded-full">
+                    <h2 class="bg-[#48567F] text-white rounded-full px-3 py-2 font-bold">02</h2>
+                </div>
+                <div class="rounded-full bg-[#2E2E2E] p-7 shadow-2xl">
+                    <img class="rounded-full bg-[#2E2E2E]" src="https://jaber.webrouk.com/assets/images/steps/steps-2.jpg" alt="">
+                </div>
+                <div class="text-center leading-7 pt-5">
+                    <h2 class="font-bold text-xl text-white">Find a Real Estate</h2>
+                    <p>Search and discover new</p>
+                    <p>homes for sale & rent</p>
+                </div>
+            </div>
+            <div class="mt-20 lg:mt-1 relative">
+                <div class="absolute top-8 right-3 bg-[#2E2E2E] p-2 rounded-full">
+                    <h2 class="bg-[#48567F] text-white rounded-full px-3 py-2 font-bold">03</h2>
+                </div>
+                <div class="rounded-full bg-[#2E2E2E] p-7 shadow-2xl">
+                    <img class="rounded-full bg-[#2E2E2E]" src="https://jaber.webrouk.com/assets/images/steps/steps-3.jpg" alt="">
+                </div>
+                <div class="text-center leading-7 pt-5">
+                    <h2 class="font-bold text-xl text-white">Take Your Keys</h2>
+                    <p>Take your keys to your new</p>
+                    <p>home and enjoy</p>
+                </div>
+            </div>
+            <div class="mt-20 relative">
+                <div class="absolute top-8 right-3 bg-[#2E2E2E] p-2 rounded-full">
+                    <h2 class="bg-[#48567F] text-white rounded-full px-3 py-2 font-bold">04</h2>
+                </div>
+                <div class="rounded-full bg-[#2E2E2E] p-7 shadow-2xl">
+                    <img class="rounded-full bg-[#2E2E2E]" src="https://jaber.webrouk.com/assets/images/steps/steps-4.jpg" alt="">
+                </div>
+                <div class="text-center leading-7 pt-5">
+                    <h2 class="font-bold text-xl text-white">Live Happy</h2>
+                    <p>Enjoy the splendor of your new</p>
+                    <p>home and live happily</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section Number -->
+
+    <section class="p-5 mt-20 bg-[url('https://jaber.webrouk.com/assets/images/real-estate-bg.jpg')] bg-no-repeat bg-cover bg-center bg-fixed bg-[#2e2e2e] bg-blend-multiply">
+        <div class="p-24 md:grid lg:grid-cols-4 md:grid-cols-2 block font-bold text-center">
+            <div class="text-white border-r-[2px] border-[#947A5A] py-5">
+                <h2 class="text-5xl">745</h2>
+                <p class="text-xl">Properties on Map</p>
+            </div>
+            <div class="text-white border-r-[2px] border-[#947A5A] py-5">
+                <h2 class="text-5xl">23</h2>
+                <p class="text-xl">Professional Agents</p>
+            </div>
+            <div class="text-white border-r-[2px] border-[#947A5A] py-5">
+                <h2 class="text-5xl">12,074</h2>
+                <p class="text-xl">Happy Clients</p>
+            </div>
+            <div class="text-white border-r-[2px] border-[#947A5A] lg:border-none py-5">
+                <h2 class="text-5xl">16</h2>
+                <p class="text-xl">New Apartments Daily</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- section PLACES -->
+
+    <section class="container m-auto pt-20">
+        <div class="text-center">
+            <h2 class="bg-[#9B7B55] text-white inline-block px-10">
+                <span class="md:text-5xl text-3xl font-bold">PLACES</span>
+                <br>
+                <span class="md:text-3xl text-xl">PROPERTIES BY AREA</span>
+            </h2>
+        </div>
+        <div class="grid lg:grid-cols-3 sm:grid-cols-2 block gap-5 my-20">
+            <div class="relative lg:col-span-2">
+                <div class="">
+                    <img class="h-[50vh] w-11/12 md:w-[100%] mx-auto" src="https://jaber.webrouk.com/assets/images/places/places-1.jpg" alt="">
+                </div>
+                <div class="absolute bottom-8 left-10 ps-5 text-white border-l-[3px] border-[#947A5A]">
+                    <h3 class="font-bold">New York</h3>
+                    <p>8 Properties</p>
+                </div>
+            </div>
+            <div class="relative">
+                <div>
+                    <img class="h-[50vh] w-11/12 md:w-[100%] mx-auto" src="https://jaber.webrouk.com/assets/images/places/places-2.jpg" alt="">
+                </div>
+                <div class="absolute bottom-8 left-10 ps-5 text-white border-l-[3px] border-[#947A5A]">
+                    <h3 class="font-bold">Chicago</h3>
+                    <p>6 Properties</p>
+                </div>
+            </div>
+            <div class="relative">
+                <div>
+                    <img class="h-[50vh] w-11/12 md:w-[100%] mx-auto" src="https://jaber.webrouk.com/assets/images/places/places-3.jpg" alt="">
+                </div>
+                <div class="absolute bottom-8 left-10 ps-5 text-white border-l-[3px] border-[#947A5A]">
+                    <h3 class="font-bold">San Francisco</h3>
+                    <p>4 Properties</p>
+                </div>
+            </div>
+            <div class="relative">
+                <div>
+                    <img class="h-[50vh] w-11/12 md:w-[100%] mx-auto" src="https://jaber.webrouk.com/assets/images/places/places-4.jpg" alt="">
+                </div>
+                <div class="absolute bottom-8 left-10 ps-5 text-white border-l-[3px] border-[#947A5A]">
+                    <h3 class="font-bold">Boston</h3>
+                    <p>5 Properties</p>
+                </div>
+            </div>
+            <div class="relative">
+                <div>
+                    <img class="h-[50vh] w-11/12 md:w-[100%] mx-auto" src="https://jaber.webrouk.com/assets/images/places/places-5.jpg" alt="">
+                </div>
+                <div class="absolute bottom-8 left-10 ps-5 text-white border-l-[3px] border-[#947A5A]">
+                    <h3 class="font-bold">Miami Beach</h3>
+                    <p>7 Properties</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section HOT LATEST PROPERTIES -->
+
+    <section class="bg-[#2E2E2E] py-20">
+        <div class="container m-auto px-20">
+            <div class="text-center">
+                <h2 class="bg-[#9B7B55] text-white inline-block px-10">
+                    <span class="text-5xl font-bold">HOT</span>
+                    <br>
+                    <span class="text-3xl">LATEST PROPERTIES</span>
+                </h2>
+            </div>
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 block gap-5 transition-all duration-500 ease-in-out mt-20">
+                <div class="bg-[#303236] ">
+                    <div class="relative">
+                        <div class="overflow-hidden">
+                            <img class="transition-all duration-500 ease-in-out hover:opacity-70 hover:scale-110 w-full" src="https://jaber.webrouk.com/assets/images/properties/properties-420-1.jpg" alt="">
+                        </div>
+                        <ul class="absolute top-8 left-3 flex text-white">
+                            <li class="bg-[#F21C40] px-4 mr-2">FOR SALE</li>
+                            <li class="bg-[#2094F3] px-4">NEW</li>
+                        </ul>
+                        <div class="absolute top-8 right-3 px-3 bg-[#2E2E2E] text-white">
+                            <i class="fas fa-eye"></i>
+                            <span>47</span>
+                        </div>
+                        <ul class="absolute bottom-4 left-3 flex text-white">
+                            <li><i class="fas fa-location-dot text-xs pe-1"></i></li>
+                            <li><a href="#" class="hover:underline pe-1">New York,</a></li>
+                            <li><a href="#" class="hover:underline pe-1">Albany</a></li>
+                        </ul>
+                    </div>
+                    <div class="p-5 leading-9">
+                        <h3 class="text-[#9B7B55] font-bold text-xl">$230,000</h3>
+                        <a href="#" class="text-white text-2xl hover:text-[#9B7B55]">Apartment with subunits</a>
+                        <p class="text-[#989899]">Modern home near the ocean shore....</p>
+                        <div class="pt-3 text-[#989899]">
+                            <span class="pr-2">
+                                <svg width="17px" hieght="17px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="grid-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-grid-2 fa-lg inline"><path fill="#989899" d="M224 80c0-26.5-21.5-48-48-48H80C53.5 32 32 53.5 32 80v96c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V80zm0 256c0-26.5-21.5-48-48-48H80c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V336zM288 80v96c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48H336c-26.5 0-48 21.5-48 48zM480 336c0-26.5-21.5-48-48-48H336c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V336z" class=""></path></svg>
+                                <span>4</span>
+                            </span>
+                            <span class="pr-2">
+                                <i class="fas fa-bed"></i>
+                                <span>3</span>
+                            </span>
+                            <span class="pr-2">
+                                <i class="fas fa-bath"></i>
+                                <span>2</span>
+                            </span>
+                            <span class="pr-2"><i class="fas fa-arrows-up-down-left-right rotate-45"></i> 105 Sqft</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center border-t-[1px] border-zinc-700 p-3">
+                        <div>
+                            <img class="rounded-full w-10 inline font-bold" src="https://jaber.webrouk.com/assets/images/agents/agents-96-1.jpg" alt="">
+                            <a href="#" class="text-white font-bold">Matteo Augustine</a>
+                        </div>
+                        <div class="transition-all duration-500 ease-in-out text-[#989899]">
+                            <a href="#" class="px-3 py-2 hover:bg-[#9B7B55] rounded-full"><i class="fas fa-arrow-right-arrow-left"></i></a>
+                            <a href="#" class="px-3 py-2 hover:bg-[#9B7B55] rounded-full"><i class="fas fa-heart"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-[#303236] ">
+                    <div class="relative">
+                        <div class="overflow-hidden">
+                            <img class="transition-all duration-500 ease-in-out hover:opacity-70 hover:scale-110 w-full" src="https://jaber.webrouk.com/assets/images/properties/properties-420-4.jpg" alt="">
+                        </div>
+                        <ul class="absolute top-8 left-3 flex text-white">
+                            <li class="bg-[#4AA178] px-4 mr-2">FOR RENT</li>
+                            <li class="bg-[#DA71D7] px-4">FEATURED</li>
+                        </ul>
+                        <div class="absolute top-8 right-3 px-3 bg-[#2E2E2E] text-white">
+                            <i class="fas fa-eye"></i>
+                            <span>39</span>
+                        </div>
+                        <ul class="absolute bottom-4 left-3 flex text-white">
+                            <li><i class="fas fa-location-dot text-xs pe-1"></i></li>
+                            <li><a href="#" class="hover:underline pe-1">California,</a></li>
+                            <li><a href="#" class="hover:underline pe-1">Oakland</a></li>
+                        </ul>
+                    </div>
+                    <div class="p-5 leading-9">
+                        <h3 class="text-[#9B7B55] font-bold text-xl">$1150</h3>
+                        <a href="#" class="text-white text-2xl hover:text-[#9B7B55]">Apartment with subunits</a>
+                        <p class="text-[#989899]">Modern home near the ocean shore....</p>
+                        <div class="pt-3 text-[#989899]">
+                            <span class="pr-2">
+                                <svg width="17px" hieght="17px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="grid-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-grid-2 fa-lg inline"><path fill="#989899" d="M224 80c0-26.5-21.5-48-48-48H80C53.5 32 32 53.5 32 80v96c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V80zm0 256c0-26.5-21.5-48-48-48H80c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V336zM288 80v96c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48H336c-26.5 0-48 21.5-48 48zM480 336c0-26.5-21.5-48-48-48H336c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V336z" class=""></path></svg>
+                                <span>3</span>
+                            </span>
+                            <span class="pr-2"><i class="fas fa-bed"></i> 3</span>
+                            <span class="pr-2"><i class="fas fa-bath"></i> 1</span>
+                            <span class="pr-2"><i class="fas fa-arrows-up-down-left-right rotate-45"></i> 125 Sqft</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center border-t-[1px] border-zinc-700 p-3">
+                        <div>
+                            <img class="rounded-full w-10 inline font-bold" src="https://jaber.webrouk.com/assets/images/agents/agents-96-2.jpg" alt="">
+                            <a href="#" class="text-white font-bold">Roob Howard</a>
+                        </div>
+                        <div class="transition-all duration-500 ease-in-out text-[#989899]">
+                            <a href="#" class="px-3 py-2 hover:bg-[#9B7B55] rounded-full"><i class="fas fa-arrow-right-arrow-left"></i></a>
+                            <a href="#" class="px-3 py-2 hover:bg-[#9B7B55] rounded-full"><i class="fas fa-heart"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-[#303236] ">
+                    <div class="relative">
+                        <div class="overflow-hidden">
+                            <img class="transition-all duration-500 ease-in-out hover:opacity-70 hover:scale-110 w-full" src="https://jaber.webrouk.com/assets/images/properties/properties-420-5.jpg" alt="">
+                        </div>
+                        <ul class="absolute top-8 left-3 flex text-white">
+                            <li class="bg-[#4AA178] px-4 mr-2">FOR RENT</li>
+                        </ul>
+                        <div class="absolute top-8 right-3 px-3 bg-[#2E2E2E] text-white">
+                            <i class="fas fa-eye"></i>
+                            <span>26</span>
+                        </div>
+                        <ul class="absolute bottom-4 left-3 flex text-white">
+                            <li><i class="fas fa-location-dot text-xs pe-1"></i></li>
+                            <li><a href="#" class="hover:underline pe-1">Florida,</a></li>
+                            <li><a href="#" class="hover:underline pe-1">Miami</a></li>
+                        </ul>
+                    </div>
+                    <div class="p-5 leading-9">
+                        <h3 class="text-[#9B7B55] font-bold text-xl">$900</h3>
+                        <a href="#" class="text-white text-2xl hover:text-[#9B7B55]">Apartment with subunits</a>
+                        <p class="text-[#989899]">Modern home near the ocean shore....</p>
+                        <div class="pt-3 text-[#989899]">
+                            <span class="pr-2">
+                                <svg width="17px" hieght="17px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="grid-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-grid-2 fa-lg inline"><path fill="#989899" d="M224 80c0-26.5-21.5-48-48-48H80C53.5 32 32 53.5 32 80v96c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V80zm0 256c0-26.5-21.5-48-48-48H80c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V336zM288 80v96c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48H336c-26.5 0-48 21.5-48 48zM480 336c0-26.5-21.5-48-48-48H336c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V336z" class=""></path></svg>
+                                <span>4</span>
+                            </span>
+                            <span class="pr-2">
+                                <i class="fas fa-bed"></i>
+                                <span>3</span>
+                            </span>
+                            <span class="pr-2">
+                                <i class="fas fa-bath"></i>
+                                <span>2</span>
+                            </span>
+                            <span class="pr-2"><i class="fas fa-arrows-up-down-left-right rotate-45"></i> 120 Sqft</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center border-t-[1px] border-zinc-700 p-3">
+                        <div>
+                            <img class="rounded-full w-10 inline font-bold" src="https://jaber.webrouk.com/assets/images/agents/agents-96-3.jpg" alt="">
+                            <a href="#" class="text-white font-bold">Nathan Rowland</a>
+                        </div>
+                        <div class="transition-all duration-500 ease-in-out text-[#989899]">
+                            <a href="#" class="px-4 py-3 hover:bg-[#9B7B55] hover:text-white rounded-full"><i class="fas fa-arrow-right-arrow-left"></i></a>
+                            <a href="#" class="px-4 py-3 hover:bg-[#9B7B55] hover:text-white rounded-full"><i class="fas fa-heart"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- start section Our dedicated -->
+
+    <section class="container m-auto px-20">
+        <div class="grid lg:grid-cols-3 gap-5 block my-20 items-center">
+            <div>
+                <h2 class="text-5xl font-bold text-white underline decoration-[#9b7c5570] hover:decoration-[#9B7C56]">Our dedicated real estate agents</h2>
+                <p class="text-[#A1A185] pt-10">Our Real Estate team strive to get the best possible result for our clients by tailoring to your individual needs and providing superior friendly.</p>
+                <div class="transition-all duration-500 ease-in-out pt-8">
+                    <a href="#" class="py-2 px-3 m-1 text-white font-bold bg-[#48567F] hover:bg-white hover:text-[#9B7B55] transition-all duration-1000 ease-in-out">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                    <a href="#" class="py-2 px-3 m-1 text-white font-bold bg-[#48567F] hover:bg-white hover:text-[#9B7B55] transition-all duration-1000 ease-in-out">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2 grid md:grid-cols-3 blok gap-5">
+                <div class="">
+                    <div class="flex justify-between">
+                        <div >
+                            <img class="rounded-tr-3xl" src="https://jaber.webrouk.com/assets/images/agents/agents-600-1.jpg" alt="">
+                        </div>
+                        <ul class="text-[#989899] text-base leading-9 ms-4 mt-3">
+                            <li><a href="#" class="block"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#" class="block"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" class="block"><i class="fab fa-facebook-f"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="pt-3 font-semibold">
+                        <a class="text-white text-xl hover:text-[#9B7B55]" href="#">Matteo Augustine</a>
+                        <p class="text-[#989899]">Real Estate Broker</p>
+                    </div>
+                </div>
+
+                <div class="">
+                    <div class="flex justify-between">
+                        <div >
+                            <img class="rounded-tr-3xl" src="https://jaber.webrouk.com/assets/images/agents/agents-600-2.jpg" alt="">
+                        </div>
+                        <ul class="text-[#989899] text-base leading-9 ms-4 mt-3">
+                            <li><a href="#" class="block"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#" class="block"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" class="block"><i class="fab fa-facebook-f"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="pt-3 font-semibold">
+                        <a class="text-white text-xl hover:text-[#9B7B55]" href="#">Roob Howard</a>
+                        <p class="text-[#989899]">Real Estate Broker</p>
+                    </div>
+                </div>
+
+                <div class="">
+                    <div class="flex justify-between">
+                        <div >
+                            <img class="rounded-tr-3xl" src="https://jaber.webrouk.com/assets/images/agents/agents-600-3.jpg" alt="">
+                        </div>
+                        <ul class="text-[#989899] text-base leading-9 ms-4 mt-3">
+                            <li><a href="#" class="block"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#" class="block"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" class="block"><i class="fab fa-facebook-f"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="pt-3 font-semibold">
+                        <a class="text-white text-xl hover:text-[#9B7B55]" href="#">Nathan Rowland</a>
+                        <p class="text-[#989899]">Real Estate Broker</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section Featured Property -->
+
+    <section class="bg-[url('https://jaber.webrouk.com/assets/images/real-estate-bg.jpg')] bg-no-repeat bg-cover bg-center bg-fixed bg-[#2e2e2e] bg-blend-multiply p-5 mt-20 grid md:grid-cols-2 gap-5 block">
+        
+        <!-- slider  -->
+        <div class="min-h-[60vh] p-3 items-center">
+            <div class="mx-auto relative">
+                <!-- first -->
+                <div class="">
+                    <input class="sr-only peer" type="radio" name="carousel" id="carousel-1" checked />
+                    <!-- content #1 -->
+                    <div class="absolute top-8 left-3 opacity-0 peer-checked:opacity-100 peer-checked:z-10 z-0">
+                        <img class="h-80" src="https://jaber.webrouk.com/assets/images/properties/properties-420-5.jpg" alt="" />
+                        <!-- controls -->
+                        <div class="absolute bottom-8 left-3 flex z-20">
+                            <label for="carousel-3" class="transition-all duration-500 ease-in-out pt-8">
+                                <span class="py-2 px-3 m-1 text-white font-bold bg-[#48567F] hover:bg-white hover:text-[#9B7B55] transition-all duration-1000 ease-in-out cursor-pointer">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                            </label>
+                            <label for="carousel-2" class="transition-all duration-500 ease-in-out pt-8">
+                                <span class="py-2 px-3 m-1 text-white font-bold bg-[#48567F] hover:bg-white hover:text-[#9B7B55] transition-all duration-1000 ease-in-out cursor-pointer">
+                                    <i class="fas fa-chevron-right"></i>
+                                </span>
+                            </label>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- second -->
+                <div class="">
+                    <input class="sr-only peer" type="radio" name="carousel" id="carousel-2" />
+                    <!-- content #2 -->
+                    <div class="absolute top-8 left-3 opacity-0 peer-checked:opacity-100 peer-checked:z-10 z-0">
+                        <img class="h-80" src="https://jaber.webrouk.com/assets/images/properties/properties-420-4.jpg" alt="" />
+                        <!-- controls -->
+                        <div class="absolute bottom-8 left-3 flex z-20">
+                            <label for="carousel-1" class="transition-all duration-500 ease-in-out pt-8">
+                                <span class="py-2 px-3 m-1 text-white font-bold bg-[#48567F] hover:bg-white hover:text-[#9B7B55] transition-all duration-1000 ease-in-out cursor-pointer">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                            </label>
+                            <label for="carousel-3" class="transition-all duration-500 ease-in-out pt-8">
+                                <span class="py-2 px-3 m-1 text-white font-bold bg-[#48567F] hover:bg-white hover:text-[#9B7B55] transition-all duration-1000 ease-in-out cursor-pointer">
+                                    <i class="fas fa-chevron-right"></i>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- three -->
+                <div class="">
+                    <input class="sr-only peer" type="radio" name="carousel" id="carousel-3" />
+                    <!-- content #3 -->
+                    <div class="absolute top-8 left-3 opacity-0 peer-checked:opacity-100 peer-checked:z-10 z-0">
+                        <img class="h-80" src="https://jaber.webrouk.com/assets/images/properties/properties-420-1.jpg" alt="" />
+                        <!-- controls -->
+                        <div class="absolute bottom-8 left-3 flex z-20">
+                            <label for="carousel-2" class="transition-all duration-500 ease-in-out pt-8">
+                                <span class="py-2 px-3 m-1 text-white font-bold bg-[#48567F] hover:bg-white hover:text-[#9B7B55] transition-all duration-1000 ease-in-out cursor-pointer">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                            </label>
+                            <label for="carousel-1" class="transition-all duration-500 ease-in-out pt-8">
+                                <span class="py-2 px-3 m-1 text-white font-bold bg-[#48567F] hover:bg-white hover:text-[#9B7B55] transition-all duration-1000 ease-in-out cursor-pointer">
+                                    <i class="fas fa-chevron-right"></i>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="absolute top-10 z-30">
+                    <p class="bg-[#9B7B55] text-white py-2 px-4 font-bold">$230,000</p>
+                </div>
+                <ul class="absolute top-10 right-20 text-white font-semibold text-base z-30 flex ">
+                    <li class="bg-[#2094F3] px-3">NEW</li>
+                    <li class="bg-[#4AA178] px-3 ml-2">FOR RENT</li>
+                </ul>
+            </div>
+
+            
+        </div>
+
+        <!-- right div has text content -->
+
+        <div class="p-3 w-9/12 font-semibold">
+            <h2 class="text-white text-3xl">Featured Property</h2>
+            <p class="text-[#989899] mt-5">Feature your property and be seen higher up in the search results, above all Standard listings.</p>
+            <ul class="text-white mt-5 leading-9">
+                <li><span class="bg-[#9B7B55] px-1 mr-2 rounded-tl-lg rounded-bl-3xl rounded-br-2xl rounded-tr-3xl ">1</span>Donec auctor dui vel urna ultrices feugiat.</li>
+                <li><span class="bg-[#9B7B55] px-1 mr-2 rounded-tl-lg rounded-bl-3xl rounded-br-2xl rounded-tr-3xl ">2</span>Vivamus aliquam augue a risus lacinia viverra.</li>
+                <li><span class="bg-[#9B7B55] px-1 mr-2 rounded-tl-lg rounded-bl-3xl rounded-br-2xl rounded-tr-3xl ">3</span>Integer vitae neque ac arcu molestie suscipit.</li>
+            </ul>
+            <div class="flex justify-between my-4">
+                <ul class="text-[#989899] text-lg leading-9">
+                    <li><i class="fas fa-arrows-up-down-left-right rotate-45"></i> Area: 105 Sqft</li>
+                    <li><i class="fas fa-bath"></i> Baths: 2</li>
+                </ul>
+                <ul class="text-[#989899] text-lg leading-9">
+                    <li><svg width="17px" hieght="17px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="grid-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-grid-2 fa-lg inline"><path fill="#989899" d="M224 80c0-26.5-21.5-48-48-48H80C53.5 32 32 53.5 32 80v96c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V80zm0 256c0-26.5-21.5-48-48-48H80c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V336zM288 80v96c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48H336c-26.5 0-48 21.5-48 48zM480 336c0-26.5-21.5-48-48-48H336c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V336z" class=""></path></svg> Rooms: 4</li>
+                    <li><i class="fas fa-bed"></i> Beds: 3</li>
+                </ul>
+            </div>
+            <a href="#" class="bg-[#9B7B55] text-white hover:bg-white hover:text-[#9B7B55] px-5 py-2">View details ⇒</a>
+        </div>
+    </section>
+
+    <!-- section Highlight and display -->
+
+    <section class="container m-auto px-20">
+        <div class="grid lg:grid-cols-3 gap-10 block my-20 items-center">
+            <div>
+                <h2 class="text-5xl font-bold text-white underline decoration-[#9b7c5570] hover:decoration-[#9B7C56]">Highlight and display the best reviews on your website</h2>
+                <p class="text-[#A1A185] pt-10">A website without reviews is a business without trust. So potential customers can hear how fantastic your business is right from another customer's mouth. And you can't get much more trustworthy than that!</p>
+                <div class="pt-8">
+                    <a href="#" class="bg-[#48567F] text-white hover:bg-white hover:text-[#9B7B55] px-5 py-2 transition-all duration-500 ease-in-out">View details ⇒</a>
+                </div>
+            </div>
+
+            <div class="col-span-2 grid md:grid-cols-2 gap-5 block">
+                
+                    <div class="flex items-center bg-[#2E3034] p-5">
+                        <div class="mr-3">
+                            <img class="rounded-full w-20" src="https://jaber.webrouk.com/assets/images/ratings/ratings-1.jpg" alt="">
+                        </div>
+                        <div>
+                            <div class="text-[#989899]">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h2 class="text-white font-semibold text-xl">Gordon Morales</h2>
+                            <p class="text-[#989899]">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center bg-[#2E3034] p-5">
+                        <div class="mr-3">
+                            <img class="rounded-full w-20" src="https://jaber.webrouk.com/assets/images/ratings/ratings-2.jpg" alt="">
+                        </div>
+                        <div>
+                            <div class="text-[#989899]">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h2 class="text-white font-semibold text-xl">Richard Ivy</h2>
+                            <p class="text-[#989899]">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center bg-[#2E3034] p-5">
+                        <div class="mr-3">
+                            <img class="rounded-full w-20" src="https://jaber.webrouk.com/assets/images/ratings/ratings-3.jpg" alt="">
+                        </div>
+                        <div>
+                            <div class="text-[#989899]">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h2 class="text-white font-semibold text-xl">Vincent Jones</h2>
+                            <p class="text-[#989899]">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center bg-[#2E3034] p-5">
+                        <div class="mr-3">
+                            <img class="rounded-full w-20" src="https://jaber.webrouk.com/assets/images/ratings/ratings-4.jpg" alt="">
+                        </div>
+                        <div>
+                            <div class="text-[#989899]">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h2 class="text-white font-semibold text-xl">Chris Dirksen</h2>
+                            <p class="text-[#989899]">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center bg-[#2E3034] p-5">
+                        <div class="mr-3">
+                            <img class="rounded-full w-20" src="https://jaber.webrouk.com/assets/images/ratings/ratings-5.jpg" alt="">
+                        </div>
+                        <div>
+                            <div class="text-[#989899]">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h2 class="text-white font-semibold text-xl">Robert Mohler</h2>
+                            <p class="text-[#989899]">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- section BLOG NEWS & INSIGHTS -->
+
+    <section>
+        <div class="container mx-auto px-20">
+            <div class="text-center">
+                <h2 class="bg-[#9B7B55] text-white inline-block px-10">
+                    <span class="md:text-5xl text-3xl font-bold">BLOG</span>
+                    <br>
+                    <span class="md:text-3xl text-xl">NEWS & INSIGHTS</span>
+                </h2>
+            </div>
+            
+            <!--  -->
+            <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-5 my-20 block">
+                <div class="lg:row-span-2 md:col-span-2 lg:col-span-1 bg-[#2E2E2E] p-5 leading-7 relative transition-all duration-500 ease-in-out hover:bg-[url('https://jaber.webrouk.com/assets/images/properties/properties-420-1.jpg')] bg-no-repeat bg-cover bg-center bg-blend-multiply hover:border-[2px] hover:border-[#48567F]">
+                    <ul class="flex justify-between text-[#989899]">
+                        <li><i class="fas fa-clock"></i> 23 Feb 2022</li>
+                        <li>
+                            <i class="fas fa-folder-open"></i> 
+                            <a href="#"> Tax,</a> 
+                            <a href="#"> Selling</a>
+                        </li>
+                    </ul>
+                    <h2 class="text-white text-xl font-semibold pt-5">How to avoid a tax bomb when selling your home</h2>
+                    <p class="text-[#989899] py-5 font-semibold">With soaring home values, many sellers expect a sizable...</p>
+                    <a href="#" class="absolute bottom-4 text-[#989899] hover:text-[#9B7B55] font-semibold">READ MORE <i class="fas fa-arrow-right-long"></i></a>
+                </div>
+
+                <div class="lg:col-span-2 bg-[#2E2E2E] p-5 leading-7 relative transition-all duration-500 ease-in-out hover:bg-[url('https://jaber.webrouk.com/assets/images/properties/properties-420-2.jpg')] bg-no-repeat bg-cover bg-center bg-blend-multiply hover:border-[2px] hover:border-[#48567F]">
+                    <ul class="flex justify-between text-[#989899]">
+                        <li><i class="fas fa-clock"></i> 16 Feb 2022</li>
+                        <li>
+                            <i class="fas fa-folder-open"></i> 
+                            <a href="#"> Real Estate,</a> 
+                            <a href="#"> Agents</a>
+                        </li>
+                    </ul>
+                    <h2 class="text-white text-xl font-semibold pt-5">How to Find the Right Real Estate Agent</h2>
+                    <p class="text-[#989899] py-5 font-semibold">There are a lot of real estate agents out there. So how...</p>
+                    <a href="#" class="absolute bottom-4 text-[#989899] hover:text-[#9B7B55] font-semibold">READ MORE <i class="fas fa-arrow-right-long"></i></a>
+                </div>
+
+                <div class="bg-[#2E2E2E] p-5 leading-7 relative transition-all duration-500 ease-in-out hover:bg-[url('https://jaber.webrouk.com/assets/images/properties/properties-420-4.jpg')] bg-no-repeat bg-cover bg-center bg-blend-multiply hover:border-[2px] hover:border-[#48567F]">
+                    <ul class="flex justify-between text-[#989899]">
+                        <li><i class="fas fa-clock"></i> 06 Feb 2022</li>
+                        <li>
+                            <i class="fas fa-folder-open"></i> 
+                            <a href="#"> Tax,</a> 
+                            <a href="#"> Selling</a>
+                        </li>
+                    </ul>
+                    <h2 class="text-white text-xl font-semibold pt-5">Why do you need to consult a real estate agent</h2>
+                    <p class="text-[#989899] py-5 font-semibold">Many people buy or sell real estate nowadays. This has...</p>
+                    <a href="#" class="absolute bottom-4 text-[#989899] hover:text-[#9B7B55] font-semibold">READ MORE <i class="fas fa-arrow-right-long"></i></a>
+                </div>
+
+                <div class="bg-[#2E2E2E] p-5 leading-7 relative transition-all duration-500 ease-in-out hover:bg-[url('https://jaber.webrouk.com/assets/images/properties/properties-420-5.jpg')] bg-no-repeat bg-cover bg-center bg-blend-multiply hover:border-[2px] hover:border-[#48567F]">
+                    <ul class="flex justify-between text-[#989899]">
+                        <li><i class="fas fa-clock"></i> 27 Jan 2021</li>
+                        <li>
+                            <i class="fas fa-folder-open"></i> 
+                            <a href="#"> Guide,</a> 
+                            <a href="#"> Selling</a>
+                        </li>
+                    </ul>
+                    <h2 class="text-white text-xl font-semibold pt-5">The Complete Guide to Selling Your Home</h2>
+                    <p class="text-[#989899] py-5 font-semibold">No matter how great your home looks at first glance...</p>
+                    <a href="#" class="absolute bottom-4 pt-16 text-[#989899] hover:text-[#9B7B55] font-semibold">READ MORE <i class="fas fa-arrow-right-long"></i></a>
+                </div>
+
+                <div class="lg:col-span-2 bg-[#2E2E2E] p-5 leading-7 relative transition-all duration-500 ease-in-out hover:bg-[url('https://jaber.webrouk.com/assets/images/properties/properties-420-6.jpg')] bg-no-repeat bg-cover bg-center bg-blend-multiply hover:border-[2px] hover:border-[#48567F]">
+                    <ul class="flex justify-between text-[#989899]">
+                        <li><i class="fas fa-clock"></i> 19 Jan 2021</li>
+                        <li>
+                            <i class="fas fa-folder-open"></i> 
+                            <a href="#"> Guide,</a> 
+                            <a href="#"> Buying</a>
+                        </li>
+                    </ul>
+                    <h2 class="text-white text-xl font-semibold pt-5">First Time Home Buyer Guide</h2>
+                    <p class="text-[#989899] py-5 font-semibold">Looking to buy your first home? You've come to the right place...</p>
+                    <a href="#" class="absolute bottom-4 text-[#989899] hover:text-[#9B7B55] font-semibold">READ MORE <i class="fas fa-arrow-right-long"></i></a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- section Subscribe -->
+    <section class="container mx-auto py-10 px-5 bg-[url('https://jaber.webrouk.com/assets/images/topography-pattern.png')] bg-no-repeat bg-cover bg-center bg-fixed bg-[#48567F] bg-blend-multiply md:flex justify-around block text-center">
+        <h2 class="text-white text-3xl font-semibold">Subscribe to our newsletter</h2>
+        <form>
+            <input type="email" name="email" placeholder="your email address" class="py-2 px-5 bg-[#212121]  focus:outline-none focus:border-[#9B7B55] focus:ring-1 focus:ring-[#9B7B55]">
+            <button class="text-white font-semibold bg-[#9B7B55] py-2 px-3">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- footer -->
+
+    <footer class="bg-[#2E2E2E] pt-20">
+        <div class="grid lg:grid-cols-3 gap-10 container mx-auto font-semibold">
+            <div>
+                <a href="#">
+                    <svg width="100px" heught="100px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 29"><path fill="#9B7B55" d="M6.09545 21.4873H1.41667V20.3491H6.09545C6.65401 20.3491 7.12296 20.1383 7.50236 19.7168C7.88176 19.2952 8.07146 18.7367 8.07146 18.0411V1H9.20964V18.0411C9.20964 19.0423 8.9093 19.8696 8.30859 20.523C7.70788 21.1659 6.97016 21.4873 6.09545 21.4873ZM6.09545 23.7636H1.41667V22.6254H6.09545C7.27578 22.6254 8.27696 22.1776 9.09897 21.2818C9.93154 20.386 10.3478 19.3058 10.3478 18.0411V1H11.486V18.0411C11.486 19.6219 10.9591 20.9709 9.9052 22.088C8.86187 23.2051 7.59194 23.7636 6.09545 23.7636ZM6.09545 26.0401H1.41667V24.9019H6.09545C7.9081 24.9019 9.44676 24.2326 10.7114 22.8942C11.9866 21.5558 12.6242 19.9381 12.6242 18.0411V1H13.7624V18.0411C13.7624 19.4849 13.4199 20.8234 12.7348 22.0564C12.0604 23.2788 11.133 24.2485 9.95262 24.9652C8.77229 25.6818 7.48655 26.0401 6.09545 26.0401ZM6.09545 28.3164H1.41667V27.1782H6.09545C7.29687 27.1782 8.44032 26.9359 9.5258 26.4511C10.6113 25.9664 11.544 25.3182 12.3238 24.5067C13.1142 23.6846 13.7413 22.7098 14.205 21.5821C14.6687 20.4545 14.9006 19.2742 14.9006 18.0411V1H16.0388V18.0411C16.0388 19.4322 15.7753 20.7601 15.2483 22.0248C14.7319 23.2895 14.0258 24.3855 13.1301 25.313C12.2448 26.2297 11.1857 26.9569 9.95262 27.4943C8.73012 28.0423 7.44439 28.3164 6.09545 28.3164Z"></path><path fill="#fff" d="M37.5768 27.4167L37.5408 14.8527C37.5048 10.6407 34.7328 8.12066 29.8008 8.12066C26.1648 8.12066 24.2208 8.94866 21.5568 10.5327L23.2488 13.4127C25.1568 12.1167 27.0648 11.4687 28.9008 11.4687C31.9248 11.4687 33.4728 12.9087 33.4728 15.3207V15.8967H27.6768C23.0688 15.9327 20.4408 18.1647 20.4408 21.6567C20.4408 25.0407 23.0328 27.5967 27.1728 27.5967C29.9448 27.5967 32.1408 26.7687 33.5088 25.0767V27.4167H37.5768ZM28.0368 24.3207C25.7328 24.3207 24.3288 23.2047 24.3288 21.4767C24.3288 19.6407 25.5888 18.9207 28.2888 18.9207H33.4728V20.6847C33.2568 22.7727 30.9888 24.3207 28.0368 24.3207ZM54.1346 8.12066C51.1466 8.12066 48.8426 9.34466 47.4386 11.5767V0.704663H43.2986V27.4167H47.4386V24.1047C48.8426 26.3367 51.1466 27.5607 54.2066 27.5607C59.6786 27.5607 63.2786 23.6367 63.2786 17.9127C63.2786 12.0807 59.5706 8.12066 54.1346 8.12066ZM53.2706 24.0327C49.8506 24.0327 47.4386 21.4767 47.4386 17.7687C47.4386 14.1687 49.8506 11.5767 53.2706 11.5767C56.6906 11.5767 59.1026 14.2047 59.1026 17.7687C59.1026 21.4407 56.6906 24.0327 53.2706 24.0327ZM75.4713 8.12066C69.7833 8.15666 65.7873 12.0807 65.7873 17.8767C65.7873 23.6367 69.6753 27.5607 75.5793 27.5607C78.8913 27.5607 81.6273 26.3727 83.4993 24.3207L81.3033 21.9807C79.8993 23.4207 77.9913 24.2127 75.9033 24.2127C72.8793 24.2127 70.6113 22.3767 69.9633 19.4247H84.4353C84.9393 12.5127 82.2033 8.12066 75.4713 8.12066ZM69.8913 16.4007C70.3233 13.3407 72.4833 11.4327 75.5073 11.4327C78.6393 11.4327 80.6913 13.3047 80.8353 16.4007H69.8913ZM92.8914 12.0807V8.26466H88.7514V27.4167H92.8914V17.4087C93.2154 14.1327 95.6634 11.8647 99.5154 12.0807V8.12066C96.4914 8.12066 94.1874 9.48866 92.8914 12.0807Z"></path></svg>
+                </a>
+                <p class="text-[#989899] font-semibold py-8">Jaber services allow you to buy or sell a property while providing essential information to help you take one of life’s biggest financial decisions.</p>
+                <ul class="flex justify-start text-white">
+                    <li class="bg-[#9B7B55] rounded-full h-10 w-10 me-1 items-center flex justify-center"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="bg-[#9B7B55] rounded-full h-10 w-10 me-1 items-center flex justify-center"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li class="bg-[#9B7B55] rounded-full h-10 w-10 me-1 items-center flex justify-center"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li class="bg-[#9B7B55] rounded-full h-10 w-10 me-1 items-center flex justify-center"><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                    <li class="bg-[#9B7B55] rounded-full h-10 w-10 items-center flex justify-center"><a href="#"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="text-white text-2xl">Hot links</h2>
+                <div class="flex text-[#989899] py-8">
+                    <ul class="pe-7">
+                        <li><a href="#">Places</a></li>
+                        <li><a href="#">Single Property</a></li>
+                        <li><a href="#">Submit Property</a></li>
+                        <li><a href="#">Compare</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Latest News</a></li>
+                        <li><a href="#">Single Post</a></li>
+                        <li><a href="#">Sign In</a></li>
+                        <li><a href="#">Sign Up</a></li>
+                        <li><a href="#">Reviews</a></li>
+                        <li><a href="#">Page 404</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-white text-2xl">Contact Info</h2>
+                <p class="text-[#989899] font-semibold py-8 px-1">Custodian of the two Holy Mosques Road Cross Prince Bandar Street (Suwaiket) P.O.Box 1402, Al Khobar 31952</p>
+                <div class="grid grid-cols-2 gap-5">
+                    <div>
+                        <h2 class="text-white text-2xl">Telephone</h2>
+                        <a class="text-[#989899] font-semibold py-8" href="#">(02) 966 202 290</a>
+                    </div>
+                    <div>
+                        <h2 class="text-white text-2xl">Telephone</h2>
+                        <a class="text-[#989899] font-semibold py-8" href="#">(02) 966 202 290</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container border-t-[1px] border-zinc-700 md:flex justify-between mx-auto font-semibold text-[#989899] py-8 px-1 text-xl">
+            <p>Jaber - Real Estate HTML Template</p>
+            <p>© 2021 Proudly Powered by Webrouk</p>
+        </div>
+    </footer>
+
+    <script>
+        function Menu(e){
+            let list = document.querySelector('#list');
+            e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
+        }
+    </script>
+</body>
+</html>
